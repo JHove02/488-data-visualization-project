@@ -1,1 +1,15 @@
-<p>data-options works!</p>
+<div class="bar-chart-wrapper">
+    <div class="addBarDataDiv">
+        <label for="dataPoints">Add Data</label>
+        <input type="text" class="barDataLabelInput" value="Data point label">
+        <input type="text" class="barDataNumberInput" value="Data point number">
+        <button class="addBarDataBtn">Submit Data Point</button>
+    </div>
+    <div class="removeBarDataDiv">
+        <label for="dataPoints">Remove Data</label>
+        <select name="dataPoints" id="selectRemovePoints" >
+            <option *ngFor="let data of barData[0].dataPoints; let i = index" value="{i}">{{data.label}}</option>
+        </select>
+        <button class="removeBarDataButton" (onClick)="removeBarData()">Submit data point removal</button>
+    </div>
+</div>
