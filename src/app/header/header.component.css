@@ -1,0 +1,30 @@
+.wrapper{
+    width: 100%;
+    background-color: gray;
+    margin: 0;
+    height: 15%;
+    padding: .5%;
+    position: relative;
+}
+
+.wrapper button{
+    height: 5vh;
+    width: 10vw;
+    margin: 0;
+    background-color: grey;
+    border: 0;
+}
+
+.wrapper button:hover {
+    border-bottom: solid 5px black;
+    font-weight: bold;
+}
+
+/* .not-selected{
+    border: 0;
+} */
+
+.selected{
+  border-bottom: solid 5px black;
+  font-weight: bold;
+}
