@@ -1,15 +1,51 @@
-<div class="bar-chart-wrapper">
+<div class="bar-chart-wrapper" *ngIf="barSelected">
     <div class="addBarDataDiv">
-        <label for="dataPoints">Add Data</label>
-        <input type="text" class="barDataLabelInput" value="Data point label">
-        <input type="text" class="barDataNumberInput" value="Data point number">
-        <button class="addBarDataBtn">Submit Data Point</button>
+        <label class="add-label" for="dataPoints">Add Data</label>
+        <div class="bar-label-input-containter">
+            <input type="text" id="bar-input-label" class="input" placeholder=" " #label >
+            <div class="cut"></div>
+            <label for="bar-input-label" class="placeholder">Data Label</label>
+        </div>
+        
+        <div class="bar-number-input-containter">
+            <input type="text" id="bar-input-number" class="input" placeholder=" " #y>
+            <div class="cut"></div>
+            <label for="bar-number-number" class="placeholder">Data number</label>
+        </div>
+        <button class="add-submit-btn" (click)="addBarData(label.value, y.value)">Submit Data</button>
     </div>
     <div class="removeBarDataDiv">
-        <label for="dataPoints">Remove Data</label>
+        <label class="remove-label" for="dataPoints">Remove Data</label>
         <select name="dataPoints" id="selectRemovePoints" >
             <option *ngFor="let data of barData[0].dataPoints; let i = index" value="{i}">{{data.label}}</option>
         </select>
-        <button class="removeBarDataButton" (onClick)="removeBarData()">Submit data point removal</button>
+        <button class="remove-Bar-Data-Button" (click)="removeBarData()">Remove Data</button>
     </div>
 </div>
+
+<div class="line-chart-wrapper" *ngIf="!barSelected">
+    <div class="add-linedata-container">
+        <label class="add-label" for="dataPoints">Add Data</label>
+        <div class="line-x-input-containter">
+            <input type="text" id="line-input-x" class="input" placeholder=" " #x >
+            <div class="cut"></div>
+            <label for="line-input-x" class="placeholder">X value</label>
+        </div>
+        
+        <div class="line-y-input-containter">
+            <input type="text" id="line-input-y" class="input" placeholder=" " #y>
+            <div class="cut"></div>
+            <label for="line-input-y" class="placeholder">Y value</label>
+        </div>
+        <button class="add-submit-btn" (click)="addLineData(x.value, y.value)">Submit Data</button>
+    </div>
+    <div class="remove-lineData-container">
+        <label class="remove-x" for="dataPoints">Remove Data</label>
+        <select name="dataPoints" id="selectRemovePoints" >
+            <option *ngFor="let data of lineData[0].dataPoints; let i = index" value="{i}">{{data.x}}</option>
+        </select>
+        <button class="remove-line-Data-Button" (click)="removeLineData()">Remove Data</button>
+    </div>
+</div>
+
+

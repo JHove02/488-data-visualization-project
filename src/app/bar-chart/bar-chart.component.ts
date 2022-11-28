@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-bar-chart',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BarChartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataSer: DataService) { }
+
+  data = this.dataSer.getBarData();
 
   ngOnInit(): void {
+    this.data = this.dataSer.getBarData();
   }
 
   chart: any;
@@ -23,18 +27,7 @@ export class BarChartComponent implements OnInit {
       includeZero: true,
       suffix: "K"
     },
-    data: [{
-      type: "bar",
-      indexLabel: "{y}",
-      yValueFormatString: "#,###K",
-      dataPoints: [
-        { label: "Snapchat", y: 15 },
-        { label: "Instagram", y: 20 },
-        { label: "YouTube", y: 24 },
-        { label: "Twitter", y: 29 },
-        { label: "Facebook", y: 73 }
-      ]
-    }]
+    data: this.data
   }
 
 }

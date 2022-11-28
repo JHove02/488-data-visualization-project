@@ -7,6 +7,8 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { HeaderComponent } from './header/header.component';
 import { DataOptionsComponent } from './data-options/data-options.component';
 import { ChartChoicesComponent } from './chart-choices/chart-choices.component';
+import { RoutingModule } from './routing/routing.module';
+import { LineChartComponent } from './line-chart/line-chart.component';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { ChartChoicesComponent } from './chart-choices/chart-choices.component';
     BarChartComponent,
     HeaderComponent,
     DataOptionsComponent,
-    ChartChoicesComponent
+    ChartChoicesComponent,
+    LineChartComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
