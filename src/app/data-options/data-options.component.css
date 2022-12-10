@@ -132,10 +132,11 @@
 #selectRemovePoints{
     grid-row: 2;
     border-radius: 10px;
-    height: 2rem;
+    height: 3rem;
     background-color: #303245;
     color: white;
     text-align: center;
+    margin-top: 3%;
 }
 
 .remove-Bar-Data-Button{
@@ -181,4 +182,27 @@
     height: 50px;
     width: 100%;
     margin-top: 15px;
+}
+
+.remove-lineData-container{
+    display: grid;
+    grid-template-rows: 3;
+    row-gap: .4em;
+    grid-template-columns: 1;
+    padding-bottom: 12vh;
+    height: 120px;
+}
+
+.remove-line-Data-Button{
+    grid-row: 3;
+    border-radius: 10px;
+    border: 1px solid #3c67e3;
+    height: 2rem;
+    margin-top: 15px;
+    background-color: #212534;
+    color: white;
+}
+
+.remove-line-Data-Button:hover{
+    box-shadow: 4px 0 10px #3c67e3;
 }

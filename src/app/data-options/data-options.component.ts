@@ -20,6 +20,7 @@ export class DataOptionsComponent implements OnInit {
   
 
   ngOnInit(): void {
+    this.barSelected = this.dataService.getSelectedChart();
   }
 
 

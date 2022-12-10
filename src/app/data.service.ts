@@ -22,7 +22,7 @@ export class DataService {
 
   private lineData = [{
     type: "line",
-    xValueFormatString: "####",
+    xValueFormatString: "YYYY",
     yValueFormatString: "$#,###.##",
     dataPoints: [
       { x: 1980, y: 2500582120 },
@@ -58,7 +58,7 @@ export class DataService {
   }]
 
 
-  barChartSelected?: boolean = false;
+  barChartSelected: boolean = true;
 
   toggleBarChart():void{
     this.barChartSelected = !this.barChartSelected;
@@ -90,6 +90,13 @@ export class DataService {
 
   removeLineChartData(index: number){
     this.lineData[0].dataPoints.splice(index, 1)
+  }
+
+  setSelectedChart(isBar: boolean):void{
+    if(isBar == false)
+    {this.barChartSelected = false;}
+    else 
+    {this.barChartSelected = true;}
   }
 
 }

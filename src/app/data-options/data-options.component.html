@@ -40,7 +40,7 @@
         <button class="add-submit-btn" (click)="addLineData(x.value, y.value)">Submit Data</button>
     </div>
     <div class="remove-lineData-container">
-        <label class="remove-x" for="dataPoints">Remove Data</label>
+        <label class="remove-label" for="dataPoints">Remove Data</label>
         <select name="dataPoints" id="selectRemovePoints" >
             <option *ngFor="let data of lineData[0].dataPoints; let i = index" value="{i}">{{data.x}}</option>
         </select>

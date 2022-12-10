@@ -1,0 +1,44 @@
+.container{
+    display: inline-block;
+    width: 90%;
+    margin: 4vh 2vw 2vh 8vw;
+    justify-content: center;
+}
+
+.card{
+    border: 10px solid #212534;
+    width: 24vw;
+    padding: 15px;
+    height: 36vh;
+    border-radius: 15px;
+}
+
+#bar{
+    float: left;
+    margin-left: 5vw;
+}
+
+#line{
+    float: right;
+    margin-right: 15vw;
+}
+
+button{
+    margin-top: 3vh;
+    margin-left: 3vw;
+    border-radius: 10px;
+    border: 1px solid #3c67e3;
+    height: 2rem;
+    background-color: #212534;
+    color: white;
+    width: 10vw;
+}
+
+button:hover{
+    box-shadow: 4px 0 10px #3c67e3;
+}
+
+.card h2 {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+}
