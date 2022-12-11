@@ -7,6 +7,7 @@ export class DataService {
 
   constructor() { }
 
+  //bar chart data points
   private barData = [{
     type: "bar",
     indexLabel: "{y}",
@@ -20,6 +21,7 @@ export class DataService {
     ]
   }]
 
+  //data points for the line chart
   private lineData = [{
     type: "line",
     xValueFormatString: "YYYY",
@@ -57,13 +59,8 @@ export class DataService {
      
   }]
 
-
-  barChartSelected: boolean = true;
-
-  toggleBarChart():void{
-    this.barChartSelected = !this.barChartSelected;
-  }
-
+  chartSelected:string = "bar";
+  
   getBarData(){
     return this.barData;
   }
@@ -73,11 +70,12 @@ export class DataService {
   }
 
   getSelectedChart(){
-    return this.barChartSelected;
+    return this.chartSelected;
   }
 
   addLineChartData(x: number, y: number): void {
-    this.lineData[0].dataPoints.push({x: x, y: y})
+    this.lineData[0].dataPoints.push({x: x, y: y});
+    this.lineData[0].dataPoints.sort(function(a,b){return a.x- b.x;});
   }
 
   addBarChartData(newLabel:string, newY: number): void {
@@ -92,11 +90,11 @@ export class DataService {
     this.lineData[0].dataPoints.splice(index, 1)
   }
 
-  setSelectedChart(isBar: boolean):void{
-    if(isBar == false)
-    {this.barChartSelected = false;}
-    else 
-    {this.barChartSelected = true;}
+  setSelectedChart(chart:string):void{
+    if(chart == "bar")
+    {this.chartSelected = "bar";}
+    else if(chart == "line")
+    {this.chartSelected = "line";}
   }
 
 }

@@ -4,13 +4,13 @@
         <div class="canvas-wrapper">
             <canvasjs-chart [options]="barChartOptions" [styles]="{width: '80%%', height:'180px' }"></canvasjs-chart>    
         </div>  
-        <button class="bar-btn" (click)="barClick" >Choose Bar Chart</button>
+        <button class="bar-btn" (click)="barClick()" routerLink="/bar-chart">Choose Bar Chart</button>
     </div>
     <div class="card" id="line">
         <h2>Line Chart</h2>
         <div class="canvas-wrapper">
             <canvasjs-chart [options]="lineChartOptions" [styles]="{width: '80%', height:'180px'}"></canvasjs-chart>  
         </div>
-        <button class="line-btn" (click)="lineClick()">Choose Line Chart</button>
+        <button class="line-btn" (click)="lineClick()" routerLink="/line-chart">Choose Line Chart</button>
     </div>
 </div>

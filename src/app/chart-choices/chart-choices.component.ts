@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
@@ -6,18 +6,18 @@ import { DataService } from '../data.service';
   templateUrl: './chart-choices.component.html',
   styleUrls: ['./chart-choices.component.css']
 })
-export class ChartChoicesComponent implements OnInit {
+export class ChartChoicesComponent implements OnInit{
 
   constructor(private dataSer: DataService) { }
 
+  //get data from data service
   barData = this.dataSer.getBarData();
   lineData = this.dataSer.getLineData();
-
-
 
   ngOnInit(): void {
   }
 
+  //information for chart previews
   chart: any;
 	
   barChartOptions = {
@@ -63,12 +63,13 @@ export class ChartChoicesComponent implements OnInit {
 		data: this.lineData
 	}
 
+  //set chart choice string from choose chart buttons
   lineClick():void{
-    this.dataSer.setSelectedChart(false);
+    this.dataSer.setSelectedChart("line");
   }
 
   barClick():void{
-    this.dataSer.setSelectedChart(true);
+    this.dataSer.setSelectedChart("bar");
   }
 
 }

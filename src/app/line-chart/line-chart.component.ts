@@ -12,6 +12,7 @@ export class LineChartComponent implements OnInit {
 
   data = this.datSer.getLineData();
 
+  //get line chart data on load
   ngOnInit(): void {
     this.data = this.datSer.getLineData();
   }
@@ -19,14 +20,11 @@ export class LineChartComponent implements OnInit {
   chart: any;
 
   
-	
+	//information for charts
 	chartOptions = {
 		theme: "light2",
 		animationEnabled: true,
 		zoomEnabled: true,
-		title: {
-			text: "Market Capitalization of ACME Corp"
-		},
 		axisY: {
 			labelFormatter: (e: any) => {
 				var suffixes = ["", "K", "M", "B", "T"];

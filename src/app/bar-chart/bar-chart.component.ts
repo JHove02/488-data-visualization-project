@@ -12,16 +12,16 @@ export class BarChartComponent implements OnInit {
 
   data = this.dataSer.getBarData();
 
+  //attempt to get chart choice
   ngOnInit(): void {
     this.data = this.dataSer.getBarData();
   }
 
+
+  //chart information
   chart: any;
 	
   chartOptions = {
-    title:{
-      text: "Total Impressions by Platforms"
-    },
     animationEnabled: true,
     axisY: {
       includeZero: true,

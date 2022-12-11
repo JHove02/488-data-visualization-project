@@ -1,6 +1,6 @@
 <div class="wrapper">
-    <button *ngIf="barSelected" class="home" title="Home" routerLink="/bar-chart" routerLinkActive="active">View Chart</button>
-    <button *ngIf="!barSelected" class="home" title="Home" routerLink="/line-chart" routerLinkActive="active">View Chart</button>
+    <button *ngIf="chartSelected == 'bar'" class="home" title="Home" routerLink="/bar-chart" routerLinkActive="active">View Chart</button>
+    <button *ngIf="chartSelected == 'line'" class="home" title="Home" routerLink="/line-chart" routerLinkActive="active">View Chart</button>
     <button class="not-selected" id="dataBtn" routerLink="/data-options" routerLinkActive="active">
         Data options
     </button>

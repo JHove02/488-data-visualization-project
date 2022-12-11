@@ -1,26 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { NgModel } from '@angular/forms';
 import { __values } from 'tslib';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-data-options',
   templateUrl: './data-options.component.html',
   styleUrls: ['./data-options.component.css']
 })
-export class DataOptionsComponent implements OnInit {
+export class DataOptionsComponent implements OnInit, DoCheck{
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) { 
+  }
 
   barData = this.dataService.getBarData();
 
   lineData = this.dataService.getLineData();
 
-  barSelected = this.dataService.getSelectedChart();
+  chartSelected = this.dataService.getSelectedChart();
   
-
   ngOnInit(): void {
-    this.barSelected = this.dataService.getSelectedChart();
+    this.chartSelected = this.dataService.getSelectedChart();
+  }
+
+  ngDoCheck(): void{
+    this.chartSelected = this.dataService.getSelectedChart();
+    console.log(this.chartSelected + " do check value")
   }
 
 
